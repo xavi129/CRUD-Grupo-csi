@@ -27,6 +27,6 @@ mysql: `localhost:3306`
 |---------|------------|
 | root    | root       |
 
-
+> :exclamation: **Importante**: Recuerda esperar de 1 a 2 minutos después de iniciar los contenedores.
 
 
