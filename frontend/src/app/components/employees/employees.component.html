@@ -1,0 +1,81 @@
+<h2>CRUD de Empleados</h2>
+<form (ngSubmit)="insertData()" class="mt-5">
+    <div class="form-group">
+        <label for="full_name">Nombre completo</label>
+        <input type="text" name="full_name" class="form-control" [(ngModel)]="employee.full_name">
+        </div>
+    <div class="form-group">
+        <label for="company">Empresa</label>
+        <input type="text" name="company" class="form-control" [(ngModel)]="employee.company">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" class="form-control" [(ngModel)]="employee.email">
+    </div>
+    <div class="form-group">
+        <label for="area">Área</label>
+        <input type="text" name="area" class="form-control" [(ngModel)]="employee.area">
+    </div>
+    <div class="form-group">
+        <label for="department">Departamento</label>
+        <input type="text" name="department" class="form-control" [(ngModel)]="employee.department">
+    </div>
+    <div class="form-group">
+        <label for="position">Puesto</label>
+        <input type="text" name="position" class="form-control" [(ngModel)]="employee.position">
+    </div>
+    <div class="form-group">
+        <label for="photo">Fotografía (opcional)</label>
+        <input type="file" name="photo" class="form-control" [(ngModel)]="employee.photo">
+    </div>
+    <div class="form-group">
+        <label for="hiring_date">Fecha de alta</label>
+        <input type="date" name="hiring_date" class="form-control" [(ngModel)]="employee.hiring_date">
+    </div>
+    <div class="form-group">
+        <label for="status">Estatus</label>
+        <select name="status" class="form-control" [(ngModel)]="employee.status">
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+        </select>
+    </div>
+    <button class="btn btn-dark btn-sm mt-4">Submit</button>
+</form>
+
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th scop="col">#</th>
+            <th scop="col">Nombre completo</th>
+            <th scop="col">Empresa</th>
+            <th scop="col">Email</th>
+            <th scop="col">Área</th>
+            <th scop="col">Departamento</th>
+            <th scop="col">Puesto</th>
+            <th scop="col">Fotografía (optional)</th>
+            <th scop="col">Fecha de alta</th>
+            <th scop="col">Estatus</th>
+
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <th scope="row">{{emp.id}}</th>
+            <td>{{emp.full_name}}</td>
+            <td>{{emp.company}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.area}}</td>
+            <td>{{emp.department}}</td>
+            <td>{{emp.position}}</td>
+            <td>{{emp.photo}}</td>
+            <td>{{emp.hiring_date}}</td>
+            <td>{{emp.status}}</td>
+
+            <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteData(emp.id)">Delete</button>
+                <button class="btn btn-warning btn-sm mx-2" routerLink="edit/{{ emp.id }}">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
