@@ -2,27 +2,27 @@
 <form (ngSubmit)="insertData()" class="mt-5">
     <div class="form-group">
         <label for="full_name">Nombre completo</label>
-        <input type="text" name="full_name" class="form-control" [(ngModel)]="employee.full_name">
-        </div>
+        <input type="text" name="full_name" class="form-control" [(ngModel)]="employee.full_name" required>
+    </div>
     <div class="form-group">
         <label for="company">Empresa</label>
-        <input type="text" name="company" class="form-control" [(ngModel)]="employee.company">
+        <input type="text" name="company" class="form-control" [(ngModel)]="employee.company" required>
     </div>
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" name="email" class="form-control" [(ngModel)]="employee.email">
+        <input type="email" name="email" class="form-control" [(ngModel)]="employee.email" required>
     </div>
     <div class="form-group">
         <label for="area">Área</label>
-        <input type="text" name="area" class="form-control" [(ngModel)]="employee.area">
+        <input type="text" name="area" class="form-control" [(ngModel)]="employee.area" required>
     </div>
     <div class="form-group">
         <label for="department">Departamento</label>
-        <input type="text" name="department" class="form-control" [(ngModel)]="employee.department">
+        <input type="text" name="department" class="form-control" [(ngModel)]="employee.department" required>
     </div>
     <div class="form-group">
         <label for="position">Puesto</label>
-        <input type="text" name="position" class="form-control" [(ngModel)]="employee.position">
+        <input type="text" name="position" class="form-control" [(ngModel)]="employee.position" required>
     </div>
     <div class="form-group">
         <label for="photo">Fotografía (opcional)</label>
@@ -30,11 +30,11 @@
     </div>
     <div class="form-group">
         <label for="hiring_date">Fecha de alta</label>
-        <input type="date" name="hiring_date" class="form-control" [(ngModel)]="employee.hiring_date">
+        <input type="date" name="hiring_date" class="form-control" [(ngModel)]="employee.hiring_date" required>
     </div>
     <div class="form-group">
         <label for="status">Estatus</label>
-        <select name="status" class="form-control" [(ngModel)]="employee.status">
+        <select name="status" class="form-control" [(ngModel)]="employee.status" required>
             <option value="1">Activo</option>
             <option value="0">Inactivo</option>
         </select>

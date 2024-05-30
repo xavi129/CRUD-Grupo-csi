@@ -32,7 +32,7 @@ export class EmployeesComponent implements OnInit {
     this.dataService.insertData(this.employee).subscribe(res => {
       this.getEmployeesData();
       Swal.fire({
-        position: 'top-end',
+        position: 'center',
         icon: 'success',
         title: 'Empleado creado con éxito',
         showConfirmButton: false,
@@ -45,7 +45,7 @@ export class EmployeesComponent implements OnInit {
     this.dataService.deleteData(id).subscribe(res => {
       this.getEmployeesData();
       Swal.fire({
-        position: 'top-end',
+        position: 'center',
         icon: 'success',
         title: 'Empleado eliminado con éxito',
         showConfirmButton: false,
